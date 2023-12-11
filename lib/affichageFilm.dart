@@ -131,7 +131,7 @@ class MyHomePageState extends State<Affichage> {
             softWrap: true,
           ),
           const Padding(padding: EdgeInsets.all(15.0)),
-              /**************************/
+
           Text(
             'Liste des acteurs :',
             style: const TextStyle(
