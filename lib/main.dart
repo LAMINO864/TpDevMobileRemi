@@ -5,7 +5,7 @@ import 'affichageFilm.dart';
 import 'listeFilm.dart';
 
 void main() => runApp(MyApp());
-
+//Classe permettant la gestion de l'affichage
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -15,6 +15,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: Recherche(),
+      //Gestion de l'affichage des pages lorsque un bouton est appuyé
       routes: <String, WidgetBuilder> {
         '/route1': (BuildContext context) => Recherche(),
         '/route2': (BuildContext context) => Liste(),
