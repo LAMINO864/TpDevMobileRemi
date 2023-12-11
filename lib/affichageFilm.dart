@@ -9,12 +9,12 @@ class Affichage extends StatefulWidget {
   @override
   MyHomePageState createState() => MyHomePageState();
 }
-
+//Affichage de la page
 class MyHomePageState extends State<Affichage> {
   late Map<String, dynamic> film;
   bool dataOK = false;
   late String idFilm;
-
+  //On récupère l'ID du film sélectionné
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
@@ -26,6 +26,7 @@ class MyHomePageState extends State<Affichage> {
     else{
       idFilm = '';
     }
+    //On récupère le film à partir de son ID
     recupFilm();
   }
 
@@ -45,6 +46,7 @@ class MyHomePageState extends State<Affichage> {
     );
   }
 
+  //Méthode permettant de récupérer les informations du film
   Future<void> recupFilm() async {
     //'www.omdbapi.com/?i=tt1190080&apikey=5bfa4aa7'
     Uri uri =Uri.http('www.omdbapi.com','',{'i': '$idFilm','apikey' : 'c0c1b99a'});
@@ -57,6 +59,7 @@ class MyHomePageState extends State<Affichage> {
     }
   }
 
+  //Méthode affichant l'écran de chargement
   Widget attente() {
     return const Center(
       child: Column(
@@ -73,6 +76,7 @@ class MyHomePageState extends State<Affichage> {
     );
   }
 
+  //Méthode affichant l'écran d'information du film
   Widget affichage() {
     return Center(
       child: Column(
@@ -104,13 +108,13 @@ class MyHomePageState extends State<Affichage> {
                   spreadRadius: 3.0,
                   blurRadius: 15.0)
             ]),
-            /**************************/
+
             child:
                 Image.network('${film['Poster']}')
           ),
-          /**************************/
+
           const Padding(padding: EdgeInsets.all(15.0)),
-          /**************************/
+
           Text(
             'Description :',
             style: const TextStyle(
