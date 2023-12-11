@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert' as convert;
 
-/// *****************************
-/// Class  MyHomePage
-///*****************************
+
 class Recherche extends StatefulWidget {
 
   final String title = 'Filmographia';
@@ -12,10 +10,7 @@ class Recherche extends StatefulWidget {
   @override
   MyHomePageState createState() => MyHomePageState();
 }
-
-/// *****************************
-/// Class Privée MyHomePageState
-///*****************************
+//Affichage de la page
 class MyHomePageState extends State<Recherche> {
   late Map<String, dynamic> film;
   bool dataOK = false;
@@ -32,6 +27,7 @@ class MyHomePageState extends State<Recherche> {
     );
   }
 
+  //Affichage du formulaire permettant la saisie du nom d'un film
   Widget recherche(BuildContext context) {
     final _formKey = GlobalKey<FormState>();
     TextEditingController _nomFilm = TextEditingController();
