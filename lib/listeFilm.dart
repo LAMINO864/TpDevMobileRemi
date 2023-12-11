@@ -8,12 +8,13 @@ class Liste extends StatefulWidget {
   @override
   _ListeState createState() => _ListeState();
 }
-
+//Affichage de la page
 class _ListeState extends State<Liste> {
   late List<dynamic> lesFilms;
   bool dataOK = false;
   late String nomFilm;
 
+  //Récupération de la liste des films à partir de la recherche en argument
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
@@ -38,6 +39,7 @@ class _ListeState extends State<Liste> {
     );
   }
 
+  //Méthode permettant de faire la recherche et de mettre tout les films dans une liste
     Future<void> recupFilm() async {
     //'www.omdbapi.com/?i=tt1190080&apikey=5bfa4aa7'
     Uri uri =Uri.http('www.omdbapi.com','',{'s': '$nomFilm','apikey' : 'c0c1b99a'});
@@ -53,6 +55,7 @@ class _ListeState extends State<Liste> {
     }
   }
 
+  //Affichage de l'écran de chargement
   Widget attente() {
     return const Center(
       child: Column(
@@ -69,6 +72,7 @@ class _ListeState extends State<Liste> {
     );
   }
 
+  //Affichage de la liste
   Widget affichage() {
     final _formKey = GlobalKey<FormState>();
     
